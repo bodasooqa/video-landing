@@ -71,7 +71,7 @@
 <script>
 import { scroll } from 'quasar'
 
-const { setScrollPosition } = scroll;
+const { setScrollPosition } = scroll
 
 export default {
   name: 'PageIndex',
@@ -91,13 +91,13 @@ export default {
     deviceWidth () {
       if (window.innerWidth >= 1200) {
         return 1380
-      } else if (window.innerWidth < 1200 && window.innerWidth > 768) return 1200;
+      } else if (window.innerWidth < 1200 && window.innerWidth > 768) return 1200
       else return 800
     }
   },
   methods: {
     scrollHandler (details) {
-      this.linkDisplay = !(details.position > 0);
+      this.linkDisplay = !(details.position > 0)
       if (details.position < 7300) {
         this.currentWidth = this.deviceWidth + (details.position / 4)
       } else {
@@ -105,20 +105,20 @@ export default {
       }
 
       if (details.position >= 7300) {
-        this.currentTransition = 3;
-        if (details.position >= 7600) this.currentTransition = 3;
-        this.firstOpacity = 0;
-        this.currentText = 'fourth';
-        this.timeReset = true;
+        this.currentTransition = 3
+        if (details.position >= 7600) this.currentTransition = 3
+        this.firstOpacity = 0
+        this.currentText = 'fourth'
+        this.timeReset = true
         if (this.timeReset && details.position < 7350) {
           this.$refs.secondVideo.currentTime = 2
         }
       } else {
-        if (details.position >= 5000) this.currentText = 'third';
-        else if (details.position >= 2500) this.currentText = 'second';
-        else this.currentText = 'first';
-        this.timeReset = false;
-        this.currentTransition = 3;
+        if (details.position >= 5000) this.currentText = 'third'
+        else if (details.position >= 2500) this.currentText = 'second'
+        else this.currentText = 'first'
+        this.timeReset = false
+        this.currentTransition = 3
         this.firstOpacity = 1
       }
 
