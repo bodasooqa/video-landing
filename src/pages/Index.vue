@@ -60,7 +60,7 @@
     <q-dialog maximized persistent transition-hide="fade" transition-show="fade" v-model="dialog">
       <div class="main__full-video flex flex-center">
         <q-icon @click="dialog = false" class="cursor-pointer" color="white" name="close"/>
-        <video autoplay loop muted>
+1        <video autoplay loop>
           <source src="http://api.cloud.sberlabs.com:9080/video/m1.mp4" type="video/mp4">
         </video>
       </div>
